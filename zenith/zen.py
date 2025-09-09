@@ -7,10 +7,10 @@ from PyPDF2 import PdfReader
 import re
 
 # --- Gemini API Setup ---
-genai.configure(api_key="AIzaSyBl6LID0pQoVPie0g9HGtrYnedLOKugZDo")
+genai.configure(api_key="GEMINI_API_KEY")
 
 # --- Load PDF Q&A Dataset ---
-pdf_path = r"C:\Users\SMILE\Desktop\zenith\data\IPL_QA_Dataset_1000.pdf"#
+pdf_path = r"YOUR_PDF_PATH"#
 reader = PdfReader(pdf_path)
 
 text = ""
@@ -61,3 +61,4 @@ if user_q:
     
     response = genai.GenerativeModel("gemini-1.5-flash").generate_content(prompt)
     st.write(response.text)
+
